@@ -26,6 +26,13 @@ const questions = [
 let currentIndex = 0;
 
 
+const savedIndex = localStorage.getItem("kbcIndex");
+if (savedIndex !== null) {
+  currentIndex = parseInt(savedIndex);
+}
+
+
+
 // PART 3: showQuestion() Function
 
 function showQuestion() {
@@ -81,6 +88,10 @@ function nextQuestion() {
   } else {
     alert("Game Over");
   }
+
+localStorage.setItem("kbcIndex", currentIndex);
+
+
 }
 
 
